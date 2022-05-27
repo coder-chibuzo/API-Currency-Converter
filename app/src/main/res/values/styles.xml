@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CurrencyCalculator" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
+
+    </style>
+</resources>

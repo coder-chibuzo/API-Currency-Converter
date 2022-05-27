@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    android:id="@+id/mainLayout"
+    tools:context=".ui.activities.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_nav_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/hamburger_icon"
+            android:src="@drawable/ic_hamburger"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:textColor="@color/main_green"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_nav_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ic_nav_bar" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:fontFamily="@font/poppings_bold"
+            android:text="@string/currency"
+            android:textColor="@color/main_blue"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/ic_nav_bar"
+            app:layout_constraintTop_toBottomOf="@+id/ic_nav_bar" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppings_bold"
+            android:includeFontPadding="false"
+            android:text="@string/calculator"
+            android:textColor="@color/main_blue"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:contentDescription="@string/dot"
+            android:src="@drawable/ic_dot"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.7" />
+
+        <EditText
+            android:id="@+id/et_first_currency"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/et_bg_color"
+            android:hint="@string/input_amount"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingStart="@dimen/spacing"
+            android:paddingEnd="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_first_currency"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="LabelFor,RtlCompat" />
+
+        <TextView
+            android:id="@+id/txt_first_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            app:layout_constraintBottom_toBottomOf="@+id/et_first_currency"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/et_first_currency" />
+
+        <EditText
+            android:id="@+id/et_second_currency"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_marginTop="20dp"
+            android:background="@color/et_bg_color"
+            android:hint="Converted amount"
+            android:enabled="false"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:paddingStart="@dimen/spacing"
+            android:paddingEnd="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_first_currency"
+            app:layout_constraintStart_toStartOf="@+id/et_first_currency"
+            app:layout_constraintTop_toBottomOf="@+id/et_first_currency"
+            tools:ignore="LabelFor,RtlCompat" />
+
+        <TextView
+            android:id="@+id/txt_second_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NGN"
+            app:layout_constraintBottom_toBottomOf="@+id/et_second_currency"
+            app:layout_constraintEnd_toEndOf="@+id/txt_first_currency"
+            app:layout_constraintTop_toTopOf="@+id/et_second_currency" />
+
+
+        <com.hbb20.CountryPickerView
+            android:id="@+id/first_countryPicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
+            app:cp_initialSelectionMode="specificCountry"
+            app:cp_initialSpecificCountry="US"
+            app:layout_constraintEnd_toStartOf="@+id/second_countryPicker"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_second_currency" />
+
+        <com.hbb20.CountryPickerView
+            android:id="@+id/second_countryPicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:cp_initialSelectionMode="specificCountry"
+            app:cp_initialSpecificCountry="NG"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/first_countryPicker"
+            app:layout_constraintTop_toTopOf="@+id/first_countryPicker" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConvert"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/btn_bg"
+            android:text="@string/convert"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/second_countryPicker"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/first_countryPicker"
+            app:layout_constraintTop_toBottomOf="@+id/first_countryPicker"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ProgressBar
+            android:id="@+id/prgLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnConvert"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
