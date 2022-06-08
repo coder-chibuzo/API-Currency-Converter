@@ -11,4 +11,4 @@ An Android Converter App that fetches currency data from "https://currency.getge
 <a href="https://github.com/coder-chibuzo/API-Currency-Converter/releases/download/v1.0/APICurrencyConvert.apk">Click to download APK</a>
 
 
-<a href="[https://github.com/coder-chibuzo/API-Currency-Converter/releases/download/v1.0/APICurrencyConvert.apk](https://play.google.com/store/apps/details?id=com.CoderChibuzo.APICurrencyConverter)">Download on Google Play Store</a>
+<a href="(https://play.google.com/store/apps/details?id=com.CoderChibuzo.APICurrencyConverter)">Download on Google Play Store</a>
